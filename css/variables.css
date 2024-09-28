@@ -1,0 +1,38 @@
+/* Import Nunito Sans Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/* Light Mode Variables */
+:root {
+  --font-family: 'Nunito Sans', sans-serif;
+  
+  /* Brand Colors */
+  --brand-primary: #0768AC;
+  --brand-secondary: #03C180;
+
+  /* Background Colors */
+  --bg_default: #FFFFFF;
+  --bg_body: #F0F9FF;
+
+  /* Other Colors */
+  --lines-color: #DDDDDD;
+  --body-text: #333333;
+  --heart-color: #DC143C;
+}
+
+/* Dark Mode Variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Brand Colors (same as light mode) */
+    --brand-primary: #0768AC;
+    --brand-secondary: #03C180;
+
+    /* Background Colors */
+    --bg_default: #1A1A1A;
+    --bg_body: #282828;
+
+    /* Other Colors */
+    --lines-color: #000000;
+    --body-text: #EDEDED;
+    --heart-color: #DC143C;
+  }
+}
