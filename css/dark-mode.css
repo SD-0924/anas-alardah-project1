@@ -1,0 +1,58 @@
+/* dark-mode.css */
+body.dark-mode {
+    --bg_default: #1A1A1A;
+    --bg_body: #282828;
+    --lines-color: #000000;
+    --body-text: #EDEDED;
+}
+
+.dark-mode .header {
+    background-color: var(--bg_default);
+    border-bottom-color: var(--lines-color);
+}
+
+.dark-mode .header .nav .ul .li .a {
+    color: var(--body-text);
+    border-color: var(--lines-color);
+}
+
+.dark-mode .search-input-container,
+.dark-mode .sort-container,
+.dark-mode .filter-container {
+    background-color: var(--bg_default);
+    border-color: var(--lines-color);
+}
+
+.dark-mode .sort-container select,
+.dark-mode .filter-container select {
+    background-color: var(--bg_default);
+    color: var(--body-text);
+}
+
+.dark-mode .search-input {
+    background-color: var(--bg_default);
+    color: var(--body-text);
+}
+
+.dark-mode .card {
+    background-color: var(--bg_default);
+}
+
+.card-image .image {
+    background-color: #fff;
+}
+
+.dark-mode .card .title {
+    color: var(--body-text);
+}
+
+
+.dark-mode .card .category,
+.dark-mode .card .author {
+    color: #999;
+}
+
+.dark-mode .footer {
+    background-color: var(--bg_body);
+    color: var(--body-text);
+}
