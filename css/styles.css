@@ -535,7 +535,8 @@ body {
     }
     
     .favorites-container {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); 
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        width: 90%; 
     }
     
     .favorite-item img {
