@@ -23,13 +23,13 @@
 .details .category {
     color: var(--brand-secondary);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: .8rem;
     margin-bottom: 0.5rem;
 }
 
 .details .title {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -46,7 +46,7 @@
 /* ASIDE */
 .details-aside {
     width: 100%;
-    max-width: 350px;
+    max-width: 280px;
     margin-top: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -75,7 +75,7 @@
 .author {
     font-weight: bold;
     color: #333333;
-    font-size: 1rem;
+    font-size: .7rem;
     margin-bottom: 1rem;
 }
 
@@ -95,7 +95,7 @@
 
 .box-title {
     color: #333333;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     text-align: left;
@@ -105,7 +105,7 @@
     background-color: var(--brand-secondary);
     color: #fff;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
     width: 100%;
@@ -120,14 +120,14 @@
 }
 
 .heart-icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
     margin-right: 0.5rem;
 }
 
 .credit {
     color: #333333;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-align: center;
     margin-top: 0.75rem;
 }
@@ -189,29 +189,29 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    max-width: 1200px; 
-    padding: 2rem 1rem;
+    max-width: 1000px;
+    padding: 1.5rem 0.75rem;
     background-color: var(--bg_body);
 }
 
 .card {
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 520px;
+    max-width: 480px;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 6px;
+    margin: 0 2rem;
 }
 
 .card-header {
     background-color: var(--bg_default);
-    padding: 1rem;
-    border-bottom: 1px solid var(--lines-color);;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--lines-color);
 }
 
 .card-title {
     margin: 0;
-    font-size: 1.5rem;
     color: var(--body-text);
     text-align: center;
 }
@@ -223,11 +223,11 @@
 }
 
 .list-item {
-    padding: 1rem;
+    padding: 0.75rem;
     border-bottom: 1px solid var(--lines-color);
     display: flex;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .list-item:last-child {
@@ -236,52 +236,51 @@
 
 .check-icon {
     color: var(--brand-secondary);
-    margin-right: 0.75rem;
+    margin-right: 0.5rem;
     flex-shrink: 0;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    height: 1rem;
 }
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .card-container {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .card {
-        width: 90%;
+        width: 85%;
     }
 
     .card-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .list-item {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
 @media (min-width: 1024px) {
     .card-container {
-        padding: 2% 16%;
+        padding: 1.5% 14%;
         justify-content: flex-start;
         align-items: flex-start;
     }
 
     .card {
-        width: 520px;
+        width: 480px;
     }
 
     .card-title {
-        font-size: 2rem;
+        font-size: 1.25rem;
         text-align: left;
     }
 
     .check-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-right: 1rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 0.75rem;
     }
 }
-
 

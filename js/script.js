@@ -1,5 +1,4 @@
 const darkModeToggle = document.getElementById('darkModeToggle');
-const favouritesBtn = document.getElementById('favouritesBtn');
 const body = document.body;
 const cardsContainer = document.querySelector('.cards-container');
 const cards = document.querySelectorAll('.card');
@@ -31,12 +30,6 @@ darkModeToggle.addEventListener('click', (e) => {
         darkModeToggle.innerHTML = window.innerWidth > 768 ? '<i class="fa-regular fa-moon"></i>Dark Mode' : '<i class="fa-regular fa-moon"></i>';
     }
 });
-
-
-favouritesBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-});
-
 
 
    

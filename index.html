@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dark-mode.css">
     <!-- JS -->
-    <script defer src="js/script.js"></script>
-    <script src="js/topics.js"></script>
-    <script defer src="js/loadCards.js"></script>
     <script  type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script  nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://kit.fontawesome.com/e7512376c0.js" crossorigin="anonymous"></script>
@@ -21,11 +18,11 @@
 </head>
 <body>
     <header class="header">
-        <h3 class="brand">Web Topics</h3>
+        <h3 class="brand" onclick="window.location.href='index.html'">Web Topics</h3>
         <nav class="nav">
             <ul class="ul">
                 <li class="li"><a href="" class="a" id="darkModeToggle"><i class="fa-regular fa-moon"></i>Dark Mode</a></li>
-                <li class="li"><a href="" class="a" id="favouritesBtn"><i class="fa-regular fa-heart"></i>Favourites</a></li>
+                <li class="li"><a href="" class="a" id="favouritesNavBtn"><i class="fa-regular fa-heart"></i>Favourites</a></li>
             </ul>
         </nav>
     </header>
@@ -40,7 +37,7 @@
         <div class="search-bar">
             <div class="search-input-container">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input class="search-input" type="text" placeholder="Search the website...">
+                <input id="search-input" class="search-input" type="text" placeholder="Search the website...">
             </div>
             <div class="sort-filter-wrapper">
                 <!-- sort -->
@@ -65,14 +62,28 @@
             </div>
         </div>
         <div class="result">
-            <p class="result-text">"24" Web Topics Found</p>
+            <p id="resultText" class="result-text">"39" Web Topics Found</p>
         </div>
         <div class="cards-container">
             <!-- Cards will be added here -->
         </div>
     </main>
+
+    <section id="favorites" style="display: none;">
+        <h2>My Favourite Topics</h2>
+        <div id="favoritesList" class="favorites-container">
+            <!-- Favorite items will be dynamically inserted here -->
+        </div>
+    </section>
+
     <footer class="footer">
         <p>Developed with <i class="fa-solid fa-heart red"></i> &copy 2023</p>
     </footer>
+
+    <!-- JS --> 
+    <script src="js/script.js"></script>
+    <script src="js/topics.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/loadCards.js"></script>
 </body>
 </html>

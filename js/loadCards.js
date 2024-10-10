@@ -1,84 +1,66 @@
-function createTopicCards() {
+// DOM elements
+const searchInput = document.querySelector('#search-input');
 
-    const cardsContainer = document.querySelector('.cards-container');
+// Utility functions
+const createStarIcon = (type) => `<ion-icon class="star" name="star${type}"></ion-icon>`;
 
-    for(let i = 0; i < topics.length; i++) {
-        // Create card
-        const card = document.createElement('div');
-        card.classList.add('card');
+const createCard = ({ image, topic, category, rating, name, id }) => `
+  <div class="card" id="${id}">
+    <div class="card-image">
+      <img src="assets/Logos/${image}" alt="${topic}" class="image">
+    </div>
+    <div class="card-content">
+      <p class="category">${category}</p>
+      <h2 class="title">${topic}</h2>
+      <div class="rating">${createRatings(rating)}</div>
+      <p class="author">Author: ${name}</p>
+    </div>
+  </div>
+`;
 
-        // Create card image
-        const cardImage = document.createElement('div');
-        cardImage.classList.add('card-image');
-        const image = document.createElement('img');
-        image.src = `assets/Logos/${topics[i].image}`;
-        image.alt = topics[i].topic;
-        image.classList.add('image');
+const createCardList = (topics) => topics.map(createCard).join('');
 
-        // Create card content
-        const cardContent = document.createElement('div');
-        cardContent.classList.add('card-content');
+// Event handlers
+const handleCardClick = (e) => {
+  e.preventDefault();
+  try {
+    window.location.href = 'details.html?id=' + e.currentTarget.id;
+  } catch (error) {
+    console.error('Error navigating to details.html page:', error);
+  }
+};
 
-        // Create card category
-        const cardCategory = document.createElement('p');
-        cardCategory.classList.add('category');
-        cardCategory.textContent = topics[i].category;
+const searchCourse = (searchText) => {
+  const resultText = document.getElementById('resultText');
+  const query = event.target.value.toLowerCase();
+  const filteredTopics = topics.filter(topic => 
+    topic.topic.toLowerCase().includes(query)
+  );
+  // resultText.textContent = `"${filteredTopics.length}" Web Topics Found`;
+  // render(filteredTopics);
+  return filteredTopics;
+};
 
-        // Create card title
-        const cardTitle = document.createElement('h2');
-        cardTitle.classList.add('title'); 
-        cardTitle.textContent = topics[i].topic;
-
-        // Create card rating
-        const cardRating = document.createElement('div');
-        cardRating.classList.add('rating');
-
-        const rating = topics[i].rating;
-        const fullStars = Math.floor(rating);
-        const hasHalfStar = rating % 1 >= 0.5;
-
-        for (let j = 1; j <= 5; j++) {
-            const star = document.createElement('ion-icon');
-            star.classList.add('star');
-
-            if (j <= fullStars) {
-                star.name = 'star';
-            } else if (j === fullStars + 1 && hasHalfStar) {
-                star.name = 'star-half';
-            } else {
-                star.name = 'star-outline';
-            }
-
-            cardRating.appendChild(star);
-        }
-
-        // Create card author
-        const cardAuthor = document.createElement('p');
-        cardAuthor.classList.add('author');
-        cardAuthor.textContent = `Author: ${topics[i].name}`;
-
-        card.addEventListener('click', (e) => {
-            if (e && e.preventDefault) {
-                e.preventDefault();
-            }
-            try {
-                window.location.href = 'details.html';
-            } catch (error) {
-                console.error('Error navigating to details.html page:', error);
-            }
-        });
-
-        // Append children
-        cardImage.appendChild(image);
-        cardContent.appendChild(cardCategory);
-        cardContent.appendChild(cardTitle);
-        cardContent.appendChild(cardRating);
-        cardContent.appendChild(cardAuthor);
-        card.appendChild(cardImage);
-        card.appendChild(cardContent);
-        cardsContainer.appendChild(card);
-    }
+const handleSearch = (e) => {
+  const resultText = document.getElementById('resultText');
+  const filteredTopics = searchCourse(e.target.value);
+  resultText.textContent = `"${filteredTopics.length}" Web Topics Found`;
+  render(filteredTopics);
 }
 
-// Call the function when the window loads
-window.addEventListener('load', createTopicCards);
+// Render function
+const render = (topicsToRender) => {
+  cardsContainer.innerHTML = createCardList(topicsToRender);
+  cardsContainer.querySelectorAll('.card').forEach(card => 
+    card.addEventListener('click', handleCardClick)
+  );
+};
+
+// Initialization
+const init = () => {
+  render(topics);
+  searchInput.addEventListener('input', handleSearch);
+};
+
+// Call the init function when the document loads
+document.onload = init();
