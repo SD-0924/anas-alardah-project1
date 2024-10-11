@@ -1,4 +1,4 @@
-# Web Topics API
+# Web Topics
 
 ## Links
 
