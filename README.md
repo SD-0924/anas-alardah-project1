@@ -17,7 +17,7 @@ The **Web Topics API** provides endpoints to:
   Example: [https://web-topics-backend.onrender.com/1](https://web-topics-backend.onrender.com/1)
 
 - Get a specific course by name (`/courses/name/:name`)  
-  Example: [https://web-topics-backend.onrender.com/name/html](https://web-topics-backend.onrender.com/name/html)
+  Example: [https://web-topics-backend.onrender.com/courses/name/html](https://web-topics-backend.onrender.com/courses/name/html)
 
 ## Note
 The API was not integrated with the frontend project due to the unreliability of Render's free tier.
