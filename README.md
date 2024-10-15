@@ -14,7 +14,7 @@ The **Web Topics API** provides endpoints to:
   Example: [https://web-topics-backend.onrender.com/all-courses](https://web-topics-backend.onrender.com/all-courses)
 
 - Get a specific course by ID (`/courses/:id`)  
-  Example: [https://web-topics-backend.onrender.com/1](https://web-topics-backend.onrender.com/1)
+  Example: [https://web-topics-backend.onrender.com/1](https://web-topics-backend.onrender.com/courses/1)
 
 - Get a specific course by name (`/courses/name/:name`)  
   Example: [https://web-topics-backend.onrender.com/courses/name/html](https://web-topics-backend.onrender.com/courses/name/html)
